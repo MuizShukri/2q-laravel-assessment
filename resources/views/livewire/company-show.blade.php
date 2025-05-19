@@ -30,8 +30,7 @@
                         Name
                     </label>
                     <input type="text" id="name" wire:model.defer="name"
-                        class="w-full border @error('name') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter name" disabled>
+                        class="w-full border @error('name') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
                 </div>
                 {{-- Email --}}
                 <div>
@@ -39,8 +38,7 @@
                         Email Address
                     </label>
                     <input type="email" id="email" wire:model.defer="email"
-                        class="w-full border @error('email') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter email" disabled>
+                        class="w-full border @error('email') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
                 </div>
             </div>
             {{-- Second Row --}}
@@ -65,8 +63,7 @@
                         Website
                     </label>
                     <input type="url" id="website" wire:model.defer="website"
-                        class="w-full border @error('website') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter website" disabled>
+                        class="w-full border @error('website') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
                 </div>
             </div>
         </div>

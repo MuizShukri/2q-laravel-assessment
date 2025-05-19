@@ -1,6 +1,6 @@
 <div x-data="{ showConfirm: false }" class="inline-block">
     <!-- Trigger Button -->
-    <button @click="showConfirm = true" class="text-red-600 hover:underline">
+    <button @click="showConfirm = true" class="text-center text-xs px-2 py-2 rounded bg-red-500 hover:bg-red-600 text-white transition">
         Delete
     </button>
 

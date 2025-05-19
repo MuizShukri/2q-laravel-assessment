@@ -48,21 +48,35 @@
                                         <img src="{{ asset('storage/' . $company->logo) }}" alt="Logo"
                                             class="h-14 w-14 object-contain rounded border border-gray-200 bg-white" />
                                     @else
-                                        <span class="text-gray-400 text-xs italic">No Logo</span>
+                                        <span class="text-gray-400 text-sm italic">No Logo</span>
                                     @endif
                                     <span>{{ $company->name }}</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4">{{ $company->email }}</td>
                             <td class="px-6 py-4">
-                                <a href="{{ $company->website }}" target="_blank"
-                                    class="text-blue-600 hover:underline">
-                                    {{ $company->website }}
-                                </a>
+                                @if ($company->email)
+                                    {{ $company->email }}
+                                @else
+                                    <span class="text-gray-400 text-sm italic">No Email</span>
+                                @endif
+                            </td>
+                            <td class="px-6 py-4">
+                                @if ($company->website)
+                                    <a href="{{ $company->website }}" target="_blank"
+                                        class="text-blue-600 hover:underline">
+                                        {{ $company->website }}
+                                    </a>
+                                @else
+                                    <span class="text-gray-400 text-sm italic">No Website</span>
+                                @endif
                             </td>
                             <td class="px-6 py-4 space-x-2">
-                                <a href="{{ route('companies.show', $company->id) }}" class="text-blue-500 hover:underline">View</a>
-                                <a href="{{ route('companies.edit', $company->id) }}" class="text-yellow-500 hover:underline">Edit</a>
+                                <a href="{{ route('companies.show', $company->id) }}" class="text-center text-xs px-2 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white transition">
+                                    View
+                                </a>
+                                <a href="{{ route('companies.edit', $company->id) }}" class="text-center text-xs px-2 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-white transition">
+                                    Edit
+                                </a>
                                 <x-confirm-delete-popup :item-id="$company->id" :item-name="$company->name" wire-action="delete" />
                             </td>
                         </tr>
