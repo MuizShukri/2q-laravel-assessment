@@ -23,7 +23,7 @@
         {{-- Card Header --}}
         <div class="flex flex-col px-6 py-4">
             <a href="{{ route('companies.create') }}" class="h-10 w-fit inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition">
-                + Add New Company
+                + {{ __('Add New Company') }}
             </a>
         </div>
         {{-- Card Body: Table --}}
@@ -32,10 +32,10 @@
                 {{-- Table Header --}}
                 <thead class="sticky top-0 bg-white border-b border-gray-200">
                     <tr>
-                        <th class="px-6 py-3 font-semibold">Name</th>
-                        <th class="px-6 py-3 font-semibold">Email</th>
-                        <th class="px-6 py-3 font-semibold">Website</th>
-                        <th class="px-6 py-3 font-semibold">Actions</th>
+                        <th class="px-6 py-3 font-semibold">{{ __('Name') }}</th>
+                        <th class="px-6 py-3 font-semibold">{{ __('Email') }}</th>
+                        <th class="px-6 py-3 font-semibold">{{ __('Website') }}</th>
+                        <th class="px-6 py-3 font-semibold">{{ __('Actions') }}</th>
                     </tr>
                 </thead>
                 {{-- Table Body --}}
@@ -48,7 +48,7 @@
                                         <img src="{{ asset('storage/' . $company->logo) }}" alt="Logo"
                                             class="h-14 w-14 object-contain rounded border border-gray-200 bg-white" />
                                     @else
-                                        <span class="text-gray-400 text-sm italic">No Logo</span>
+                                        <span class="text-gray-400 text-sm italic">{{ __('No Logo') }}</span>
                                     @endif
                                     <span>{{ $company->name }}</span>
                                 </div>
@@ -57,7 +57,7 @@
                                 @if ($company->email)
                                     {{ $company->email }}
                                 @else
-                                    <span class="text-gray-400 text-sm italic">No Email</span>
+                                    <span class="text-gray-400 text-sm italic">{{ __('No Email') }}</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4">
@@ -67,15 +67,15 @@
                                         {{ $company->website }}
                                     </a>
                                 @else
-                                    <span class="text-gray-400 text-sm italic">No Website</span>
+                                    <span class="text-gray-400 text-sm italic">{{ __('No Website') }}</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4 space-x-2">
                                 <a href="{{ route('companies.show', $company->id) }}" class="text-center text-xs px-2 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white transition">
-                                    View
+                                    {{ __('View') }}
                                 </a>
                                 <a href="{{ route('companies.edit', $company->id) }}" class="text-center text-xs px-2 py-2 rounded bg-yellow-500 hover:bg-yellow-600 text-white transition">
-                                    Edit
+                                    {{ __('Edit') }}
                                 </a>
                                 <x-confirm-delete-popup :item-id="$company->id" :item-name="$company->name" wire-action="delete" />
                             </td>
@@ -83,7 +83,7 @@
                     @empty
                         <tr>
                             <td colspan="4" class="px-6 py-6 text-center text-gray-400 italic">
-                                No companies found.
+                                {{ __('No companies found.') }}
                             </td>
                         </tr>
                     @endforelse

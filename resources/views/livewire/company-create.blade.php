@@ -10,16 +10,18 @@
         <div class="flex justify-between px-6 py-4">
             <div class="flex flex-col">
                 <h1 class="font-semibold text-xl pb-4 text-gray-800">
-                    Create Companies
+                    {{ __('Create Company') }}
                 </h1>
-                <p class="text-lg text-gray-600">Company Information</p>
+                <p class="text-lg text-gray-600">
+                    {{ __('Company Information') }}
+                </p>
             </div>
             <div class="flex gap-2">
                 <a href="{{ route('companies.index') }}" class="h-10 text-center px-4 py-2 rounded bg-gray-600 hover:bg-gray-700 text-white transition">
-                    Cancel
+                    {{ __('Cancel') }}
                 </a>
                 <button type="submit" class="h-10 px-4 py-2 rounded bg-blue-600 hover:bg-blue-700 text-white transition">
-                    Save
+                    {{ __('Save') }}
                 </button>
             </div>
         </div>
@@ -30,12 +32,12 @@
                 {{-- Name --}}
                 <div>
                     <label for="name" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Name
+                        {{ __('Name') }}
                         <span class="text-red-600">*</span>                        
                     </label>
                     <input type="text" id="name" wire:model="name"
                         class="w-full border @error('name') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter name">
+                        placeholder="{{ __('Enter name') }}">
                     @error('name')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -43,11 +45,11 @@
                 {{-- Email --}}
                 <div>
                     <label for="email" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Email Address
+                        {{ __('Email Address') }}
                     </label>
                     <input type="email" id="email" wire:model="email"
                         class="w-full border @error('email') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter email">
+                        placeholder="{{ __('Enter email') }}">
                     @error('email')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -58,7 +60,7 @@
                 {{-- Logo --}}
                 <div>
                     <label for="logo" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Logo
+                        {{ __('Logo') }}
                     </label>
                     <input type="file" id="logo" wire:model="logo" accept="image/*"
                         class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4
@@ -69,7 +71,7 @@
                             cursor-pointer" />
                     @if ($logo)
                         <div class="mb-3">
-                            <img src="{{ $logo->temporaryUrl() }}" alt="Logo"
+                            <img src="{{ $logo->temporaryUrl() }}" alt="{{ __('Logo') }}"
                                 class="h-24 w-24 object-cover rounded border" />
                         </div>
                     @endif
@@ -80,11 +82,11 @@
                 {{-- Website --}}
                 <div>
                     <label for="website" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Website
+                        {{ __('Website') }}
                     </label>
                     <input type="url" id="website" wire:model="website"
                         class="w-full border @error('website') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        placeholder="Enter website">
+                        placeholder="{{ __('Enter website') }}">
                     @error('website')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror

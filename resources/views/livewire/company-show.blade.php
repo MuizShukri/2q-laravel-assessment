@@ -10,13 +10,13 @@
         <div class="flex justify-between px-6 py-4">
             <div class="flex flex-col">
                 <h1 class="font-semibold text-xl pb-4 text-gray-800">
-                    Company Information
+                    {{ __('Company Information') }}
                 </h1>
                 {{-- <p class="text-lg text-gray-600">Company Information</p> --}}
             </div>
             <div class="flex gap-2">
                 <a href="{{ route('companies.index') }}" class="h-10 text-center px-4 py-2 rounded bg-gray-600 hover:bg-gray-700 text-white transition">
-                    Back
+                    {{ __('Back') }}
                 </a>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 {{-- Name --}}
                 <div>
                     <label for="name" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Name
+                        {{ __('Name') }}
                     </label>
                     <input type="text" id="name" wire:model.defer="name"
                         class="w-full border @error('name') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
@@ -35,7 +35,7 @@
                 {{-- Email --}}
                 <div>
                     <label for="email" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Email Address
+                        {{ __('Email Address') }}
                     </label>
                     <input type="email" id="email" wire:model.defer="email"
                         class="w-full border @error('email') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
@@ -46,21 +46,21 @@
                 {{-- Logo --}}
                 <div>
                     <label for="logo" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Logo
+                        {{ __('Logo') }}
                     </label>
                     @if ($currentLogo)
                         <div class="mb-3">
-                            <img src="{{ asset('storage/' . $currentLogo) }}" alt="Current Logo"
+                            <img src="{{ asset('storage/' . $currentLogo) }}" alt="{{ __('Current Logo') }}"
                                 class="h-24 w-24 object-cover rounded border" />
                         </div>
                     @else
-                        <span class="text-gray-400 text-s italic">No Logo</span>
+                        <span class="text-gray-400 text-s italic">{{ __('No Logo') }}</span>
                     @endif
                 </div>
                 {{-- Website --}}
                 <div>
                     <label for="website" class="block text-md text-gray-700 mb-1 font-semibold">
-                        Website
+                        {{ __('Website') }}
                     </label>
                     <input type="url" id="website" wire:model.defer="website"
                         class="w-full border @error('website') border-red-500 @else border-gray-300 @enderror rounded-lg px-4 py-2 text-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500" disabled>
